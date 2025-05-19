@@ -32,11 +32,11 @@ VALUES
 
 -- Equipment table --
 CREATE TABLE equipment(
-                          id SERIAL PRIMARY KEY,
-                          name varchar(50),
-                          weight int,
-                          description TEXT,
-                          character_id INT REFERENCES character(id) ON DELETE CASCADE
+    id SERIAL PRIMARY KEY,
+    name varchar(50),
+    weight int,
+    description TEXT,
+    character_id INT REFERENCES character(id) ON DELETE CASCADE
 );
 
 
