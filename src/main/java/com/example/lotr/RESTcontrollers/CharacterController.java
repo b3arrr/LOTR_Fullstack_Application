@@ -42,7 +42,7 @@ public class CharacterController {
     public ResponseEntity<String> updateCharacter(@PathVariable int id, @RequestBody CharacterModel character) {
         int updatedRows = repository.updateCharacter(id, character);
         if (updatedRows > 0) {
-            return ResponseEntity.ok("Cyborg updated successfully!");
+            return ResponseEntity.ok("Character updated successfully!");
         } else {
             return ResponseEntity.notFound().build();
         }
