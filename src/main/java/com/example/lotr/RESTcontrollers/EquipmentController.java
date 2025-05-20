@@ -49,7 +49,7 @@ public class EquipmentController {
             return ResponseEntity.notFound().build();
         }
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteEquipment(@PathVariable int id) {
         repository.deleteEquipment(id);
         return ResponseEntity.ok("Equipment deleted");

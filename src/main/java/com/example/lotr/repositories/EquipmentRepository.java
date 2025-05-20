@@ -27,32 +27,32 @@ public class EquipmentRepository {
 
     //GET mapping
     public List<EquipmentModel> getAllEquipments() {
-        String sql = "SELECT * FROM equipments;";
+        String sql = "SELECT * FROM equipment;";
         return jdbcTemplate.query(sql, equipmentRowMapper);
     }
     public Optional<EquipmentModel> getEquipmentById(int id) {
-        String sql = "SELECT * FROM equipments WHERE id = ?";
+        String sql = "SELECT * FROM equipment WHERE id = ?";
         Optional<EquipmentModel> equipment = jdbcTemplate.query(sql, equipmentRowMapper, id).stream().findFirst();
         return equipment;
     }
     //Get equipment that a character posesses
     public List<EquipmentModel> getEquipmentsByCharacterId(int id) {
-        String sql = "SELECT * FROM equipments WHERE character_id = ?";
+        String sql = "SELECT * FROM equipment WHERE character_id = ?";
         return jdbcTemplate.query(sql, equipmentRowMapper, id);
     }
     //POST mapping
     public void createEquipment(EquipmentModel equipment) {
-        String sql = "INSERT INTO equipments (name, weight, description, character_id) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO equipment (name, weight, description, character_id) VALUES (?,?,?,?)";
         jdbcTemplate.update(sql, equipment.getName(), equipment.getWeight(), equipment.getDescription(), equipment.getCharacter_id());
     }
 
     //PUT mapping
     public int updateEquipment(int id, EquipmentModel equipment) {
-        String sql = "UPDATE equipments SET name = ?, weight = ?, description = ?, character_id = ? WHERE id = ?";
+        String sql = "UPDATE equipment SET name = ?, weight = ?, description = ?, character_id = ? WHERE id = ?";
         return jdbcTemplate.update(sql, equipment.getName(), equipment.getWeight(), equipment.getDescription(), equipment.getCharacter_id(), id);
     }
     public void deleteEquipment(int id) {
-        String sql = "DELETE FROM equipments WHERE id = ?";
+        String sql = "DELETE FROM equipment WHERE id = ?";
         jdbcTemplate.update(sql, id);
     }
 
