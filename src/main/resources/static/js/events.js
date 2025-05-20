@@ -1,13 +1,6 @@
 import {loadCharacters, editCharacter, toggleCharacterFormButtons} from "./character.js";
-import {
-    createCharacter,
-    createEquipment,
-    deleteCharacter,
-    updateCharacter,
-    deleteEquipment,
-    updateEquipment
-} from "./api.js"
-    import {loadEquipments, toggleEquipmentFormButtons} from "./equipments.js";
+import {createCharacter, createEquipment, deleteCharacter, updateCharacter, deleteEquipment, updateEquipment} from "./api.js"
+import {loadEquipments, toggleEquipmentFormButtons} from "./equipments.js";
 
 export function bindAllEvents () {
 

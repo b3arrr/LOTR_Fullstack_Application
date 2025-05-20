@@ -28,6 +28,7 @@ const getInputsEquipment = () => {
 }
 
 //Character CRUD
+//GET
 export function getAllCharacters(callback) {
     fetch(baseUrl, {
         method: 'GET',
@@ -40,6 +41,7 @@ export function getAllCharacters(callback) {
 
 }
 
+//CREATE
 export function createCharacter(callback) {
 
     const character = getInputsCharacter();
@@ -56,6 +58,7 @@ export function createCharacter(callback) {
 
 }
 
+//UPDATE
 export function updateCharacter(id) {
     const character = getInputsCharacter();
 
@@ -70,7 +73,7 @@ export function updateCharacter(id) {
     .then(data => console.log(data))
     .catch(error => console.log(error))
 }
-
+//DELETE
 export function deleteCharacter(id, callback) {
     fetch(baseUrl + "/" + id, {
         method: 'DELETE',
@@ -83,7 +86,7 @@ export function deleteCharacter(id, callback) {
 }
 
 // Equipments CRUD
-//
+
 export function getEquipmentsById(characterId, callback) {
     // $.get(`${equipmentBaseUrl}?characterId=${characterId}`, callback);
     const url = `${equipmentBaseUrl}?characterId=${characterId}`;
